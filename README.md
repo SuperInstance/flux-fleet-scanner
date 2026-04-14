@@ -1,10 +1,8 @@
 # flux-fleet-scanner
-**Python scanner for the Cocapn Fleet**  
-
-Part of the Cocapn Fleet ecosystem (github.com/SuperInstance).
+**Python tool for scanning and analyzing Flux fleet data** – a component of the **Cocapn Fleet** (github.com/SuperInstance).
 
 ## Description
-`flux-fleet-scanner` inspects, validates, and reports on fleet components such as flux‑bytecode, adaptive opcodes, and cooperative intelligence modules. It helps maintain consistency across the fleet’s diverse repositories.
+`flux-fleet-scanner` walks through fleet repositories, extracts metadata, validates bytecode compatibility, and generates concise reports. It integrates with the other Flux modules (e.g., `flux-cooperative-intelligence`, `flux-evolution`) to provide a holistic view of fleet health.
 
 ## Usage
 ```bash
@@ -16,19 +14,14 @@ cd flux-fleet-scanner
 pip install -r requirements.txt
 
 # Run the scanner (default scans the `download/` directory)
-python -m flux_fleet_scanner --path ./download
+python -m flux_fleet_scanner --path download/ --output report.json
 ```
-Optional flags:
-- `--config .env` – load environment variables.
-- `--output report.json` – write results to a JSON file.
+*Optional flags:* `--verbose`, `--filter <module>`, `--format yaml|json`.
 
 ## Related Projects
-- [flux-cooperative-intelligence](https://github.com/SuperInstance/flux-cooperative-intelligence) – AI‑driven fleet coordination.
-- [flux-a2a-prototype](https://github.com/SuperInstance/flux-a2a-prototype) – A2A communication layer.
-- [flux-conformance](https://github.com/SuperInstance/flux-conformance) – Test suite for fleet standards.
-
-## Contributing
-Contributions are welcome. Please open issues or submit pull requests against the `main` branch.
+- **Cocapn Fleet** – overall fleet orchestration: https://github.com/SuperInstance  
+- **flux-cooperative-intelligence** – AI‑driven fleet coordination: https://github.com/SuperInstance/flux-cooperative-intelligence  
+- **flux-evolution** – version‑migration utilities: https://github.com/SuperInstance/flux-evolution  
 
 ## License
-Distributed under the terms of the [LICENSE](LICENSE).
+Distributed under the terms of the [MIT License](LICENSE).
