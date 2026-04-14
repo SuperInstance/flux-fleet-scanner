@@ -1,54 +1,34 @@
 # flux-fleet-scanner
-**One‑line description:** Python tool that scans, validates, and reports on the Cocapn Fleet components.
+**Python scanner for the Cocapn Fleet**  
 
-## What it does
-`flux-fleet-scanner` walks through the various Flux sub‑projects (e.g., `flux-a2a-prototype`, `flux-adaptive-opcodes`, `flux-bytecode-diff`, …) and:
+Part of the Cocapn Fleet ecosystem (github.com/SuperInstance).
 
-- Detects missing or malformed configuration files (`.env`, CI scripts, etc.).
-- Checks version compatibility across the fleet.
-- Generates a concise health report (warnings, errors, and suggestions).
-- Outputs results in JSON and human‑readable tables for CI pipelines.
-
-## Installation
-```bash
-# Clone the repo
-git clone https://github.com/SuperInstanceOrg/flux-fleet-scanner.git
-cd flux-fleet-scanner
-
-# Create a clean Python environment
-python -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-## Configuration
-Copy the example environment file and edit as needed:
-
-```bash
-cp .env.example .env
-# Edit .env to set any required API keys, paths, etc.
-```
+## Description
+`flux-fleet-scanner` inspects, validates, and reports on fleet components such as flux‑bytecode, adaptive opcodes, and cooperative intelligence modules. It helps maintain consistency across the fleet’s diverse repositories.
 
 ## Usage
 ```bash
-# Run the scanner on the entire repository
-python -m flux_fleet_scanner
+# Clone the repo
+git clone https://github.com/SuperInstance/flux-fleet-scanner.git
+cd flux-fleet-scanner
 
-# Scan a specific sub‑project
-python -m flux_fleet_scanner --path flux-coop-runtime
+# Install dependencies
+pip install -r requirements.txt
 
-# Export results
-python -m flux_fleet_scanner --output report.json
+# Run the scanner (default scans the `download/` directory)
+python -m flux_fleet_scanner --path ./download
 ```
+Optional flags:
+- `--config .env` – load environment variables.
+- `--output report.json` – write results to a JSON file.
 
-For advanced options, see `DOCKSIDE-EXAM.md`.
+## Related Projects
+- [flux-cooperative-intelligence](https://github.com/SuperInstance/flux-cooperative-intelligence) – AI‑driven fleet coordination.
+- [flux-a2a-prototype](https://github.com/SuperInstance/flux-a2a-prototype) – A2A communication layer.
+- [flux-conformance](https://github.com/SuperInstance/flux-conformance) – Test suite for fleet standards.
 
 ## Contributing
-- Fork the repo and create a feature branch.  
-- Follow the existing code style (PEP 8).  
-- Submit a pull request with a clear description and tests.
+Contributions are welcome. Please open issues or submit pull requests against the `main` branch.
 
 ## License
-Distributed under the terms of the **MIT License** (see `LICENSE`).
+Distributed under the terms of the [LICENSE](LICENSE).
